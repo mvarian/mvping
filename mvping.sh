@@ -15,12 +15,27 @@ INVERVAL=1
 
 #================ Code below is not meant to be modified ================#
 
-for pid in $(pidof -x mvping.sh); do
-    if [ $pid != $$ ]; then
-        echo "[$(date)] : mvping.sh : Script is already running with PID $pid"
-        exit 1
-    fi
-done
+PIDFILE="mvping.sh.pid"
+
+if [ -f $PIDFILE ] 
+then
+	echo "[$(date)] : mvping.sh : Script is already running"
+	exit 1
+fi
+
+# Ensure PID file is removed on program exit.
+trap "rm -f -- '$PIDFILE'" EXIT
+
+# Create a file with current PID to indicate that process is running.
+echo $$ > "$PIDFILE"
+
+#for pid in $(pidof -x mvping.sh); do
+#for pid in $(ps | grep mvping.sh | egrep -o '(^\s*[0-9]+)' | xargs); do
+ #   if [ $pid != $$ ]; then
+ #       echo "[$(date)] : mvping.sh : Script is already running with PID $pid"
+ #       exit 1
+ #   fi
+#done
 
 
 # If log file does not yet exist, initialize it with column headers
