@@ -29,14 +29,6 @@ trap "rm -f -- '$PIDFILE'" EXIT
 # Create a file with current PID to indicate that process is running.
 echo $$ > "$PIDFILE"
 
-#for pid in $(pidof -x mvping.sh); do
-#for pid in $(ps | grep mvping.sh | egrep -o '(^\s*[0-9]+)' | xargs); do
- #   if [ $pid != $$ ]; then
- #       echo "[$(date)] : mvping.sh : Script is already running with PID $pid"
- #       exit 1
- #   fi
-#done
-
 
 # If log file does not yet exist, initialize it with column headers
 if [ ! -f $LOGPATH ] 
