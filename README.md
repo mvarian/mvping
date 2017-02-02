@@ -10,7 +10,7 @@ A simple shell script to ping a host every second and record latency to a csv fi
 
 3. mvping.sh will continue to run until killed.  Output is written in csv format in LOGPATH and can be opened by any spreadsheet program.
 
-*To gather data on a second host simultaneously, make a copy of mvping.sh, change the HOST, LOGPATH, and PIDFILE variables so they are different, and run as normal.*
+To gather data on a second host simultaneously, make a copy of mvping.sh, change the HOST, LOGPATH, and PIDFILE variables so they are different, and run as normal.
 
 
 ## Supported Platforms
