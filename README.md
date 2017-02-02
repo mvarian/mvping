@@ -4,11 +4,11 @@ A simple shell script to ping a host every second and record latency to a csv fi
 
 ## Usage
 
-# In `mvping.sh`, configure HOST, LOGPATH, and INTERVAL.
+1. In `mvping.sh`, configure HOST, LOGPATH, and INTERVAL.
 
-# Run mvping.sh in a terminal session, or schedule it to run in cron.
+2. Run mvping.sh in a terminal session, or schedule it to run in cron.
 
-# mvping.sh will continue to run until killed.  Output is written in csv format in LOGPATH and can be opened by any spreadsheet program.
+3. mvping.sh will continue to run until killed.  Output is written in csv format in LOGPATH and can be opened by any spreadsheet program.
 
 
 ## Supported Platforms
