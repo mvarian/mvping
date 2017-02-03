@@ -45,6 +45,10 @@ REGEX="(^[0-9]+.[0-9]+)"
 while [ true ] 
 do
 	LATENCY=`(awk -F'=' '/^64/ {print $4}' <(ping -c1 $HOST)) | egrep -o $REGEX`
+	if [ -z $LATENCY ] 
+	then
+		LATENCY="*"
+	fi
 	NOW=`date +'%F %H:%M:%S'`
 	echo "\"$HOST\",\"$NOW\",\"$LATENCY\"" >> "$LOGPATH"
 	sleep "$INVERVAL"
