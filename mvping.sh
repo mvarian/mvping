@@ -21,7 +21,7 @@ PIDFILE="$HOST-mvping.sh.pid"
 
 if [ -f $PIDFILE ] 
 then
-	echo "[$(date)] : mvping.sh : Script is already running"
+	echo "[$(date)] : mvping.sh : Script is already running for $HOST"
 	exit 1
 fi
 
