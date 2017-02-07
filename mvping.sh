@@ -11,10 +11,10 @@ HOST="127.0.0.1"
 LOGPATH="$HOST-mv_pings.log.csv"
 
 # Set ping interval in seconds
-INVERVAL=1
+INVERVAL=3
 
 # Used to track execution of this unique script to ensure only one instance is running at a time
-PIDFILE="mvping.sh.pid"
+PIDFILE="$HOST-mvping.sh.pid"
 
 
 #================ Code below is not meant to be modified ================#
